@@ -1,4 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+/*
+
+
+ctrl + f '# TANDA INTERNSHIP APPLICATION STYLES' to skip to my css.
+
+
+*/
+
 
 /*==============================================================================
 # RESET
@@ -424,10 +431,28 @@ textarea {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*==============================================================================
 # TANDA INTERNSHIP APPLICATION STYLES
 ==============================================================================*/
 
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -447,15 +472,354 @@ body {
   margin: 50px auto;
 }
 
+.btn {
+  width: 120px;
+  text-align: center;
+  height: 24px;
+  margin: 8px 0;
+  line-height: 24px;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: .85rem;
+  transition: background .2s, color .2s, opacity .2s;
+}
+
+.btn-red {
+  display: block;
+  text-decoration: none;
+  width: 150px;
+  color: #ffffff;
+  background: #fb8c78;
+  margin: 20px 0;
+  height: 32px;
+  line-height: 32px;
+  font-size: 1rem;
+}
+.btn-red:hover {
+  background: #ed725c;
+}
+
+.btn-green {
+  color: #ffffff;
+  background: #99c63b;
+}
+.btn-green:hover {
+  background: #85b12a;
+}
+
+.btn-blue {
+  color: #3fafd7;
+  border: 1px solid #3fafd7;
+  display: inline-block;
+  margin-right: 10px;
+  opacity: .7;
+}
+.btn-blue:hover {
+  background: #3fafd7;
+  color: #ffffff;
+}
+
 .title {
   color: #555555;
   font-weight: 400;
   font-size: 1.6rem;
 }
 
-
 .page-header {
   padding-bottom: 8px;
   margin: 18px 0 27px;
   border-bottom: 1px solid #eee;
+}
+
+.date-picker-container {
+  margin-bottom: 32px;
+}
+
+.date-picker-text .date {
+  position: relative;
+  color: #fb8c78;
+  font-weight: 700;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.date-picker-text .date::after {
+  position: absolute;
+  content: '';
+  display: block;
+  height: 1px;
+  width: 100%;
+  opacity: 0;
+  background: #fb8c78;
+  bottom: 0;
+  left: 0;
+  transition: opacity .2s;
+}
+
+.date-picker-text .date:hover::after {
+  opacity: 1;
+}
+
+.table-row {
+  display: flex;
+  border: 1px solid #dddddd;
+}
+
+.table-row .cell {
+  padding: 0 10px;
+  border-right: 1px solid #dddddd;
+}
+
+.table-row .cell:last-of-type {
+  border-right: none;
+}
+
+.table-header-row {
+  font-weight: 700;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  height: 32px;
+  line-height: 32px;
+}
+
+.table-month-row {
+  height: 40px;
+  line-height: 40px;
+  padding: 0 10px;
+  font-weight: 700;
+  background: #3fafd7;
+  color: #ffffff;
+}
+
+.table-single-row {
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 0;
+  transition: background .2s;
+  cursor: pointer;
+  font-size: 90%;
+}
+
+.table-single-row.current {
+  background: #f4f0eb;
+}
+
+.table-single-row:hover {
+  background: #efefef;
+}
+
+.table-single-row:hover .btn-blue {
+  opacity: 1;
+}
+
+.table-single-row:last-of-type {
+  border-bottom: 1px solid #dddddd;
+}
+
+.cell-date,
+.cell-actions {
+  width: calc(50% - 100px);
+}
+
+.cell-staff,
+.cell-cost {
+  width: 100px;
+}
+
+.cell-date .dates {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.cell-date .dates li {
+  display: block;
+  list-style: none;
+  position: relative;
+  width: 36px;
+  text-align: center;
+  color: #bbbbbb;
+  padding-top: 18px;
+  line-height: 1;
+}
+
+.cell-date .dates li:first-of-type,
+.cell-date .dates li:last-of-type {
+  color: #333333;
+}
+
+.cell-date .dates li span {
+  position: absolute;
+  top: 5px;
+  font-size: 11px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.roster-info-container {
+  margin: 32px 0;
+}
+
+.roster-info-text {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.roster-info-container .meta {
+  font-weight: 700;
+}
+
+.rosters-per-page {
+  height: 40px;
+  border: 1px solid #dddddd;
+  line-height: 40px;
+  padding: 5px 28px 5px 20px;
+  margin: 0 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  transition: border .2s, color .2s;
+}
+
+.rosters-per-page::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-top: 4px solid #333333;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  top: 14px;
+  right: 10px;
+  transition: border .2s;
+}
+
+.rosters-per-page:hover {
+  color: #3fafd7;
+  border-color: currentColor;
+}
+
+.rosters-per-page:hover::after {
+  border-top: 4px solid #3fafd7;
+}
+
+.help {
+  color: #3fafd7;
+  cursor: pointer;
+  font-size: 90%;
+}
+
+.help:hover {
+  text-decoration: underline;
+}
+
+#datepicker {
+  position: absolute;
+  height: 0;
+  width: 0;
+  z-index: 10;
+  box-shadow: 0 0 10px rgba(0,0,0,.2);
+  background: #ffffff;
+  overflow: hidden;
+  transition: height .2s, width .2s;
+}
+
+#datepicker .close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  background: #ed725c;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background .2s;
+}
+
+#datepicker .close:hover {
+  background: #dd5738;
+}
+
+#datepicker:target {
+  height: 300px;
+  width: 280px;
+}
+
+#datepicker .datepicker-month {
+  width: 100%;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  background: #fb8c78;
+  color: #ffffff;
+  font-weight: 700;
+  box-sizing: border-box;
+  position: relative;
+}
+
+#datepicker .datepicker-month::before,
+#datepicker .datepicker-month::after {
+  content: '';
+  display: block;
+  position: absolute;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  top: 13px;
+}
+
+#datepicker .datepicker-month::before {
+  border-right: 6px solid #ffffff;
+  left: 10px;
+}
+#datepicker .datepicker-month::after {
+  border-left: 6px solid #ffffff;
+  right: 46px;
+}
+
+#datepicker .datepicker-days {
+  height: calc(100% - 40px);
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+#datepicker .datepicker-days ul {
+  font-size: 0;
+  margin: 0;
+  padding: 0;
+  transition: color .2s, background .2s;
+}
+
+#datepicker .datepicker-days ul:first-of-type {
+  font-weight: 600;
+}
+
+#datepicker .datepicker-days .week {
+  cursor: pointer;
+  color: #333333;
+}
+
+#datepicker .datepicker-days .week:hover {
+  background: #3fafd7;
+  color: #ffffff;
+}
+
+#datepicker .datepicker-days li {
+  font-size: 1rem;
+  display: inline-block;
+  width: 14.28%;
+  height: 14.28%;
+  line-height: 36px;
+  text-align: center;
+  border-bottom: 1px solid #dddddd;
+}
+
+#datepicker .datepicker-days li.othermonth {
+  opacity: .5;
 }
