@@ -850,3 +850,19 @@ a {
 #datepicker .datepicker-days li.othermonth {
   opacity: .5;
 }
+
+@media screen and (max-width: 1200px){
+  .container {
+    width: 90vw;
+  }
+
+  .cell-date,
+  .cell-actions {
+    width: calc(50% - 60px);
+  }
+
+  .cell-staff,
+  .cell-cost {
+    width: 60px;
+  }
+}
