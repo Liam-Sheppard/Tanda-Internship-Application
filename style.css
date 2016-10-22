@@ -461,6 +461,10 @@ body {
   color: #333333;
 }
 
+a {
+  text-decoration: none;
+}
+
 .navbar {
   height: 40px;
   background: #3fafd7;
@@ -470,6 +474,25 @@ body {
 .container {
   width: 1170px;
   margin: 50px auto;
+}
+
+.quicklink {
+  color: #3fafd7;
+  border: 1px solid #3fafd7;
+  height: 32px;
+  line-height: 32px;
+  display: inline-block;
+  margin-right: 10px;
+  padding: 0 20px;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: color .2s, background .2s;
+  cursor: pointer;
+}
+
+.quicklink:hover {
+  background: #3fafd7;
+  color: #ffffff;
 }
 
 .btn {
@@ -803,6 +826,10 @@ body {
 #datepicker .datepicker-days .week {
   cursor: pointer;
   color: #333333;
+}
+
+#datepicker .datepicker-days .week.currentweek {
+  background: #f4f0eb;
 }
 
 #datepicker .datepicker-days .week:hover {
